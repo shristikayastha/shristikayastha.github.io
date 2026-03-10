@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════
+   EDUCATION SECTION
+═══════════════════════════════════════════ */
+#education {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+#education::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(155,127,212,.35), rgba(232,165,152,.35), transparent);
+}
+
+/* Education card */
+.edu-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 52px 56px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 52px;
+  align-items: center;
+  box-shadow: var(--sh);
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s, box-shadow .3s;
+}
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad);
+}
+.edu-card:hover {
+  border-color: rgba(232,165,152,.2);
+  box-shadow: var(--sh-lg), var(--sh-gw);
+}
+
+/* Text content */
+.edu-deg {
+  font-family: var(--ff-d);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 400;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.edu-uni {
+  font-size: 15px;
+  font-weight: 500;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 5px;
+}
+.edu-yr {
+  font-family: var(--ff-m);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: .07em;
+  color: var(--ink3);
+  margin-bottom: 36px;
+}
+.edu-slbl {
+  font-family: var(--ff-m);
+  font-size: 9.5px;
+  font-weight: 300;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 14px;
+}
+.edu-subjs { display: flex; flex-wrap: wrap; gap: 9px; }
+.subj {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink2);
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 7px 15px;
+  transition: border-color .2s, color .2s;
+}
+.subj:hover { border-color: rgba(232,165,152,.3); color: var(--rose); }
+
+/* CGPA box */
+.edu-gpa { text-align: center; }
+.edu-gpa-wrap {
+  background: var(--grad-glow);
+  border: 1px solid rgba(232,165,152,.2);
+  border-radius: var(--r-lg);
+  padding: 28px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.edu-gpa-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--grad);
+}
+.edu-gpa-n {
+  font-family: var(--ff-d);
+  font-size: 62px;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.edu-gpa-l {
+  font-family: var(--ff-m);
+  font-size: 10.5px;
+  font-weight: 300;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-top: 9px;
+}
+
+@media (max-width: 768px) {
+  .edu-card { grid-template-columns: 1fr; padding: 30px 26px; gap: 30px; }
+  .edu-gpa { text-align: left; }
+  .edu-gpa-n { font-size: 44px; }
+}

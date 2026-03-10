@@ -1,0 +1,96 @@
+/* ═══════════════════════════════════════════
+   SKILLS SECTION
+═══════════════════════════════════════════ */
+#skills {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+#skills::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(155,127,212,.35), rgba(232,165,152,.35), transparent);
+}
+
+/* 3-column grid for 6 cards */
+.sk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Skill card */
+.sk-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 30px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .25s, transform .28s, box-shadow .28s;
+}
+.sk-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+  background: var(--grad-glow);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+.sk-card:hover {
+  border-color: rgba(232,165,152,.25);
+  transform: translateY(-5px);
+  box-shadow: var(--sh), var(--sh-gw);
+}
+.sk-card:hover::after { opacity: 1; }
+
+.sk-icon {
+  font-family: var(--ff-m);
+  font-size: 20px;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.sk-title {
+  font-family: var(--ff-m);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 18px;
+}
+
+/* Pills */
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  font-family: var(--ff-b);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink2);
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 7px;
+  padding: 6px 15px;
+  cursor: default;
+  transition: all .2s;
+}
+.pill:hover {
+  border-color: rgba(232,165,152,.4);
+  color: var(--rose);
+  background: rgba(232,165,152,.06);
+}
+
+@media (max-width: 1024px) {
+  .sk-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .sk-grid { grid-template-columns: 1fr; }
+}
